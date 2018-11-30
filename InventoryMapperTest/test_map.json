@@ -1,0 +1,57 @@
+{
+    "DealerID":             { "isMapped": true, "type": "string", "expectNull": true, "destination": "" },
+    "DealerName":           { "isMapped": true, "type": "string", "expectNull": true, "destination": "dealername" },
+    "DealerAddress":        { "isMapped": false },
+    "DealerCity":           { "isMapped": false },
+    "DealerState":          { "isMapped": false },
+    "DealerZip":            { "isMapped": false },
+    "ContactName":          { "isMapped": false },
+    "ContactEmail":         { "isMapped": false },
+    "ContactPhone":         { "isMapped": false },
+    "VIN":                  { "isMapped": true, "type": "string", "expectNull": false, "destination": "vin" },
+    "StockNumber":          { "isMapped": true, "type": "string", "expectNull": false, "destination": "stock" },
+    "Year":                 { "isMapped": true, "type": "string", "expectNull": false, "destination" : "year"},
+    "Make":                 { "isMapped": true, "type": "string", "expectNull": false, "destination": "make" },
+    "Model":                { "isMapped": true, "type": "string", "expectNull": false, "destination": "model" },
+    "Trim":                 { "isMapped": true, "type": "string", "expectNull": false, "destination": "trim" },
+    "Condition":            { "isMapped": true, "type": "enum", "expectNull": false, "destination": "type", "mutatorInfo": { "enum": { "New": "new", "Used": "used", "Wholesale": "unknown" } } },
+    "Mileage":              { "isMapped": true, "type": "number", "expectNull": false, "destination": "miles" },
+    "ModelCode":            { "isMapped": true, "type": "string", "expectNull": false, "destination": "factorycodes" }, // not sure
+    "EngineDescription":    { "isMapped": false },
+    "Transmission":         { "isMapped": false },
+    "DriveTrain":           { "isMapped": false },
+    "Doors":                { "isMapped": false },
+    "BodyType":             { "isMapped": true, "type": "string", "expectNull": false, "destination": "standardbody" },
+    // 2018-09-15T00:00:00
+    "InventorySince" :      { "isMapped": true, "type": "date", "expectNull": false, "destination": "dateinstock", "mutatorInfo": { "date": { "sourceFormat": "yyyy-MM-dd hh:mm:ss", "destinationFormat": "yyyy-MM-ddThh:mm:ss" } } },
+    "AgeInDays":            { "isMapped": true, "type": "string", "expectNull": false, "destination": "daysinstock" },
+    "InternetPrice":        { "isMapped": true, "type": "string", "expectNull": false, "destination": "internetprice" },
+    "MSRP":                 { "isMapped": true, "type": "string", "expectNull": false, "destination": "msrp" },
+    "InvoicePrice":         { "isMapped": true, "type": "string", "expectNull": false, "destination": "invoice" },
+    "StickerPrice":         { "isMapped": true, "type": "string", "expectNull": false, "destination": "sellingprice" },
+    "ThirdPartyPrice":      { "isMapped": false },
+    "ExteriorColor":        { "isMapped": true, "type": "string", "expectNull": false, "destination": "extcolor" },
+    "InteriorColor":        { "isMapped": true, "type": "string", "expectNull": false, "destination": "intcolor" },
+    "ExteriorColorBasic":   { "isMapped": true, "type": "string", "expectNull": false, "destination": "extcolorgeneric" },
+    "InteriorColorBasic":   { "isMapped": true, "type": "string", "expectNull": false, "destination": "intcolorgeneric" },
+    "OEMCertified":         { "isMapped": false }, // bit
+    "DealershipCertified":  { "isMapped": false }, // bit
+    "InternetSpecial":      { "isMapped": false }, // bit
+    "InventoryURL":         { "isMapped": false },
+    "StandardFeatures":     { "isMapped": false }, // comma separated
+    "LotLocation":          { "isMapped": false },
+    "Description":          { "isMapped": true, "type": "string", "expectNull": false, "destination": "description" },
+    "ShowroomTitle":        { "isMapped": false },
+    "PictureURLs":          { "isMapped": true, "type": "string", "expectNull": false, "destination": "imagelist" }, // comma separated. Needs transform
+    "Options":              { "isMapped": true, "type": "string", "expectNull": false, "destination": "options" }, // comma separated
+    "CARFAXHighlights":     { "isMapped": false }, // comma separated
+    "VideoLink":            { "isMapped": false },
+    "VideoFLV":             { "isMapped": false },
+    "VideoEmbedCode":       { "isMapped": false },
+    "MPGCity":              { "isMapped": false },
+    "MPGHighway":           { "isMapped": false },
+    "YouTubeVideoID":       { "isMapped": false }, // there's a youtube url but not an id
+    "3rdPartyDetailURL":    { "isMapped": false },
+    "VehicleLastUpdate":    { "isMapped": false }, // yy-mm-dd hh:m:ss.mmm
+  "ImageLastUpdate": { "isMapped": false } // yy-mm-dd hh:m:ss.mmm
+}
