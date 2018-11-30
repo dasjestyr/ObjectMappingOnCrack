@@ -19,15 +19,14 @@ namespace InventoryMapperTest
                 .UseHeaders()
                 .UseQuotedFields();
 
+            var outStream = File.Create("out_file.csv");
+            
             var timer = new Stopwatch();
             timer.Start();
-            while (reader.Read())
-            {
-                var remapped = map.Remap(reader.Headers, reader.CurrentRecord);
-                //Console.WriteLine(string.Join(',', reader.CurrentRecord));
-            }
+            map.Transform(reader, ',', outStream).Wait();
             timer.Stop();
             Console.WriteLine($"Finished in {timer.Elapsed}");
+            Console.WriteLine(stream.Length);
 
             Console.ReadKey();
         }
